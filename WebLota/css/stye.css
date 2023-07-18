@@ -1,0 +1,524 @@
+  /* Estilos personalizados para la landing page */
+  body {
+    font-family: 'Open Sans', helvetica, arial, sans-serif;
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* Estilos para la sección de inicio */
+/* #inicio {
+    background-color: #ffffff;
+    padding: 80px 0;
+} */
+
+/* Estilos para la sección de productos */
+#productos {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+/* Estilos para la sección de quienes somos */
+#quienes-somos {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+    padding: 80px 0;
+}
+
+/* Estilos para el texto destacado */
+.highlight-text {
+    color: #003b7a;
+    font-weight: bold;
+}
+
+/* Estilos para las imágenes */
+.section-image {
+    max-height: 300px;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el navbar */
+.navbar {
+    font-size: 21px;
+    background-color: #014da3;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .navbar-brand {
+    font-size: 24px;
+    color: #fff;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+/* Estilos para la sección con imagen de fondo */
+.section-bg {
+    background-image: url('img/fondo.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Estilos para el carrusel de letras */
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+}
+
+.carousel h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.carousel h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #014da3;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+}
+
+/*Efecto*/
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalmask:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*Formato de la ventana*/
+.modalbox {
+    width: 400px;
+    position: relative;
+    padding: 5px 20px 13px 20px;
+    background: #fff;
+    border-radius: 3px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+}
+
+/*Movimientos*/
+.movedown {
+    margin: 0 auto;
+}
+
+.rotate {
+    margin: 10% auto;
+    -webkit-transform: scale(-5, -5);
+    transform: scale(-5, -5);
+}
+
+.resize {
+    margin: 10% auto;
+    width: 0;
+    height: 0;
+}
+
+.modalmask:target .movedown {
+    margin: 10% auto;
+}
+
+.modalmask:target .rotate {
+    transform: rotate(360deg) scale(1, 1);
+    -webkit-transform: rotate(360deg) scale(1, 1);
+}
+
+.modalmask:target .resize {
+    width: 400px;
+    height: 200px;
+}
+
+/*Boton de cerrar*/
+.close {
+    background: #606061;
+    color: #ffffff;
+    line-height: 25px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 1px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.close:hover {
+    background: #faac58;
+    color: #222;
+}
+
+/* SHOP */
+
+    /* Estilos personalizados para la landing page */
+    body {
+        font-family: 'Open Sans', helvetica, arial, sans-serif;
+        line-height: 1.6;
+        color: #000000;
+        background-color: #f8f8f8;
+    }
+
+    /* Estilos para el navbar */
+    .navbar {
+        font-size: 18px;
+        background-color: #0b64ca;
+        padding: 10px 0;
+    }
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 24px;
+        color: #fff;
+    }
+
+    .navbar-nav .nav-item {
+        margin-left: 20px;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffffff;
+    }
+
+    /* Estilos para la sección con imagen de fondo */
+    .section-bg {
+        background-image: url('img/fondo.png');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        padding: 100px 0;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .carousel-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .carousel h1 {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .carousel h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #000000;
+    }
+
+    /* Estilos para el menú de categorías */
+    .categorias-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .categorias-menu li {
+        margin-bottom: 10px;
+    }
+
+    .categorias-menu a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .categorias-menu a:hover {
+        color: #fff;
+        background-color: #007BFF;
+    }
+
+    /* Estilo para el contenido de las categorías */
+    .categoria-content {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .categoria-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Estilo para las tarjetas de artículos */
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    /* Estilos para el footer */
+    footer {
+        background-color: #014da3;
+        padding: 20px 0;
+        color: #fff;
+        text-align: center;
+    }
+
+
+    /* CATALOGO */
+
+     /* Estilos personalizados para la landing page */
+     body {
+        font-family: 'Open Sans', helvetica, arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+    }
+
+    /* Estilos para el navbar */
+    .navbar {
+        font-size: 18px;
+        background-color: #0b64ca;
+        padding: 10px 0;
+    }
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 24px;
+        color: #fff;
+    }
+
+    .navbar-nav .nav-item {
+        margin-left: 20px;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffffff;
+    }
+
+    /* Estilos para la sección con imagen de fondo */
+    .section-bg {
+        background-image: url('img/fondo.png');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        padding: 100px 0;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .carousel-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .carousel h1 {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .carousel h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #000000;
+    }
+
+    /* Estilos para el menú de categorías */
+    .categorias-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .categorias-menu li {
+        margin-bottom: 10px;
+    }
+
+    .categorias-menu a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .categorias-menu a:hover {
+        color: #fff;
+        background-color: #007BFF;
+    }
+
+    /* Estilo para el contenido de las categorías */
+    .categoria-content {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .categoria-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Estilo para las tarjetas de artículos */
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    /* Estilos para el footer */
+    footer {
+        background-color: #014da3;
+        padding: 20px 0;
+        color: #fff;
+        text-align: center;
+    }

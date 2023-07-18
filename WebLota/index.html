@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lota Autopartes</title>
+    <link rel="shortcut icon" href="img/logo.png" />
+    <!-- Enlaces a los archivos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Estilos personalizados para la landing page */
+        body {
+            font-family: 'Open Sans', helvetica, arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        /* Estilos para la sección de inicio */
+        /* #inicio {
+            background-color: #ffffff;
+            padding: 80px 0;
+        } */
+
+        /* Estilos para la sección de productos */
+        #productos {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+
+        /* Estilos para la sección de quienes somos */
+        #quienes-somos {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+
+        /* Estilos para la sección de contacto */
+        #contacto {
+            padding: 80px 0;
+        }
+
+        /* Estilos para el texto destacado */
+        .highlight-text {
+            color: #003b7a;
+            font-weight: bold;
+        }
+
+        /* Estilos para las imágenes */
+        .section-image {
+            max-height: 300px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos para el navbar */
+        .navbar {
+            font-size: 21px;
+            background-color: #014da3;
+            padding: 10px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .navbar-brand {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffffff;
+        }
+
+        /* Estilos para la sección con imagen de fondo */
+        .section-bg {
+            background-image: url('img/fondo.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* Estilos para el carrusel de letras */
+        .carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .carousel h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .carousel h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #014da3;
+            padding: 20px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        /*Efecto*/
+        .modalmask {
+            position: fixed;
+            font-family: Arial, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99999;
+            opacity: 0;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            pointer-events: none;
+        }
+
+        .modalmask:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /*Formato de la ventana*/
+        .modalbox {
+            width: 400px;
+            position: relative;
+            padding: 5px 20px 13px 20px;
+            background: #fff;
+            border-radius: 3px;
+            -webkit-transition: all 500ms ease-in;
+            -moz-transition: all 500ms ease-in;
+            transition: all 500ms ease-in;
+        }
+
+        /*Movimientos*/
+        .movedown {
+            margin: 0 auto;
+        }
+
+        .rotate {
+            margin: 10% auto;
+            -webkit-transform: scale(-5, -5);
+            transform: scale(-5, -5);
+        }
+
+        .resize {
+            margin: 10% auto;
+            width: 0;
+            height: 0;
+        }
+
+        .modalmask:target .movedown {
+            margin: 10% auto;
+        }
+
+        .modalmask:target .rotate {
+            transform: rotate(360deg) scale(1, 1);
+            -webkit-transform: rotate(360deg) scale(1, 1);
+        }
+
+        .modalmask:target .resize {
+            width: 400px;
+            height: 200px;
+        }
+
+        /*Boton de cerrar*/
+        .close {
+            background: #606061;
+            color: #ffffff;
+            line-height: 25px;
+            position: absolute;
+            right: 1px;
+            text-align: center;
+            top: 1px;
+            width: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .close:hover {
+            background: #faac58;
+            color: #222;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar en el lado derecho -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Lota Autopartes" style="max-height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">PRODUCTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quienes-somos">QUIENES SOMOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">CONTACTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#modal2" id="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección con imagen de fondo y carrusel de letras -->
+    <section class="section-bg">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicadores del carrusel -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Slides del carrusel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel">
+                            <h1>Bienvenidos</h1>
+                            <h2>Tenemos los mejores precios para el servicio público.</h2>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel">
+                            <h1>Toyota Hiace</h1>
+                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel">
+                            <h1>Urvan NV350</h1>
+                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles del carrusel -->
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Inicio
+    <section id="inicio">
+        <div class="container text-center">
+            <h2 class="highlight-text">¡Bienvenido!</h2>
+        </div>
+    </section> -->
+
+    <!-- Sección de Productos -->
+    <section id="productos">
+        <div class="container text-center">
+            <h2 class="highlight-text">Productos</h2>
+            <p>ECHA UN VISTAZO A NUESTROS PRODUCTOS.</p>
+            <a href="shop.html"><button type="submit" class="btn btn-primary">Ver Cátalogo</button></a>
+            <br><br>
+            <p>ECHA UN VISTAZO A NUESTROS PRODUCTOS.</p>
+            <a href="shop.html"><button type="submit" class="btn btn-primary">Ver Cátalogo</button></a>
+            <br><br>
+            <img src="img/carousel-1.jpg" alt="Imagen de Productos" class="img-fluid section-image">
+        </div>
+    </section>
+
+    <!-- Sección de Quienes Somos -->
+    <section id="quienes-somos">
+        <div class="container text-center">
+            <h2 class="highlight-text">Quienes Somos</h2>
+            <p>Aquí puedes contar la historia de tu empresa, tus valores y los miembros clave de tu equipo.</p>
+            <img src="img/logo.png" alt="Imagen de Quienes Somos" class="img-fluid section-image">
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="highlight-text text-center">Contacto</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Información de contacto</h3>
+                    <p>
+                        <strong>Sucursal Volcanes</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890
+                    <br>
+                        <strong>Sucursal Reforma</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890
+                    <br>
+                        <strong>Sucursal Conos</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890
+                    <br>
+                        <strong>Sucursal Yecapixtla</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890    
+                    <br>
+                        <strong>Sucursal Yautepec</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890
+                    <br>
+                        <strong>Sucursal Amayuca</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890
+                    <br>
+                        <strong>Sucursal Tepetlixpa</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890
+                    <br>
+                        <strong>Sucursal Amecameca</strong><br>
+                        <strong>Teléfono: </strong>
+                        +1 234 567 890
+                    <br>
+                        <strong>Correo electrónico: </strong>
+                        gcomercial@lotaautopartes.com.mx
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>Formulario de contacto</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 Lota Autopartes. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Ventana emergente modal -->
+    <div id="modal2" class="modalmask">
+        <div class="modalbox rotate">
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>WhatsApp de nuestras sucursales</h2><br>
+            <a href="https://wa.me/527352120955"><i class="fab fa-whatsapp"></i> Sucursal Volcanes</a><br>
+            <a href="https://wa.me/527352120132"><i class="fab fa-whatsapp"></i> Sucursal Reforma</a><br>
+            <a href="https://wa.me/527351944245"><i class="fab fa-whatsapp"></i> Sucursal Conos</a><br>
+            <a href="https://wa.me/527352121550"><i class="fab fa-whatsapp"></i> Sucursal Yautepec</a><br>
+            <a href="https://wa.me/527352120932"><i class="fab fa-whatsapp"></i> Sucursal Amayuca</a><br>
+            <a href="https://wa.me/527352806752"><i class="fab fa-whatsapp"></i> Sucursal Yecapixtla</a><br>
+            <a href="https://wa.me/525513841760"><i class="fab fa-whatsapp"></i> Sucursal Amecameca</a><br>
+            <a href="https://wa.me/525515048881"><i class="fab fa-whatsapp"></i> Sucursal Tepetlixpa</a>
+        </div>
+    </div>
+    <!-- Enlaces a los archivos de JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script>
+        document.getElementById("whatsapp-btn").addEventListener("click", function() {
+            alert("¡Hola! ¿En qué puedo ayudarte?");
+            // Agrega aquí la lógica para abrir el chat de WhatsApp
+            // Por ejemplo, podrías redirigir al usuario a una página que tenga el chat de WhatsApp integrado.
+        });
+    </script> -->
+
+</body>
+
+</html>
